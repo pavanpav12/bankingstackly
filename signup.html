@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Account Registration</title>
+
+<meta name="description" content="Stackly digital service account registration portal.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+
+body{
+background:linear-gradient(135deg,#0d6efd,#001f54);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+/* CONTAINER */
+.container{
+background:white;
+width:100%;
+max-width:1050px;
+border-radius:18px;
+overflow:hidden;
+display:flex;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* LEFT */
+.left{
+flex:1;
+background:linear-gradient(135deg,#d90429,#8b001a);
+color:white;
+padding:50px 40px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.left img{
+width:150px;
+margin-bottom:20px;
+}
+
+.left h2{margin-bottom:15px}
+.left p{line-height:1.7}
+
+/* RIGHT */
+.right{
+flex:1.2;
+padding:40px;
+}
+
+.right h2{
+color:#d90429;
+margin-bottom:20px;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group input, .form-group select{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:.3s;
+}
+
+.form-group input:focus{
+border-color:#d90429;
+box-shadow:0 0 6px rgba(217,4,41,.3);
+}
+
+/* BUTTON */
+.btn{
+width:100%;
+padding:13px;
+background:#d90429;
+border:none;
+color:white;
+border-radius:30px;
+font-size:15px;
+cursor:pointer;
+margin-top:10px;
+transition:.3s;
+}
+.btn:hover{background:#000}
+
+.login-link{
+text-align:center;
+margin-top:15px;
+}
+.login-link a{
+color:#d90429;
+text-decoration:none;
+font-weight:500;
+}
+
+@media(max-width:850px){
+.container{flex-direction:column}
+.left{text-align:center;align-items:center}
+.right{padding:25px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT -->
+<div class="left">
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+<h2>Welcome to Stackly</h2>
+<p>Create your digital service account to access dashboard features, activity tracking and smart tools.</p>
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+<h2>Create Your Account</h2>
+
+<form onsubmit="return createAccount()">
+
+<div class="form-group">
+<input id="name" type="text" placeholder="Full Name" required>
+</div>
+
+<div class="form-group">
+<input id="phone" type="text" placeholder="Mobile Number" maxlength="10" required>
+</div>
+
+<div class="form-group">
+<input id="email" type="email" placeholder="Email Address" required>
+</div>
+
+<div class="form-group">
+<input type="text" placeholder="Username" required>
+</div>
+
+<div class="form-group">
+<select required>
+<option value="">Select Account Type</option>
+<option>Personal</option>
+<option>Business</option>
+<option>Student</option>
+</select>
+</div>
+
+<div class="form-group">
+<input id="pass" type="password" placeholder="Create Password" required>
+</div>
+
+<div class="form-group">
+<input id="confirm" type="password" placeholder="Confirm Password" required>
+</div>
+
+<button class="btn">Create Account</button>
+
+<div class="login-link">
+Already have an account? <a href="login.html">Login</a>
+</div>
+
+</form>
+
+</div>
+</div>
+
+<script>
+
+/* letters only */
+document.getElementById("name").addEventListener("input",function(){
+this.value=this.value.replace(/[^a-zA-Z ]/g,'');
+});
+
+/* numbers only */
+document.getElementById("phone").addEventListener("input",function(){
+this.value=this.value.replace(/[^0-9]/g,'');
+});
+
+function createAccount(){
+let pass=document.getElementById("pass").value;
+let confirm=document.getElementById("confirm").value;
+
+if(pass.length<4){
+alert("Password must be at least 4 characters");
+return false;
+}
+
+if(pass!==confirm){
+alert("Passwords do not match");
+return false;
+}
+
+alert("Account created successfully!");
+window.location.href="404.html";
+return false;
+}
+
+</script>
+
+</body>
+</html>

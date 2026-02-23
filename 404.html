@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found - Stackly Bank</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#8b0000,#c40000);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+/* container */
+.container{
+max-width:700px;
+padding:20px;
+}
+
+/* 404 number */
+.code{
+font-size:140px;
+font-weight:700;
+letter-spacing:6px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+/* title */
+h1{
+font-size:32px;
+margin-top:10px;
+}
+
+p{
+margin:15px 0 30px;
+color:#ffeaea;
+}
+
+/* buttons */
+.buttons a{
+display:inline-block;
+margin:8px;
+padding:13px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.home{
+background:white;
+color:#8b0000;
+}
+
+.support{
+border:2px solid white;
+color:white;
+}
+
+.home:hover{background:#ffdede}
+.support:hover{background:white;color:#8b0000}
+
+/* circle decoration */
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.12);
+animation:move 10s linear infinite;
+}
+
+.c1{width:180px;height:180px;top:10%;left:10%;}
+.c2{width:120px;height:120px;bottom:15%;right:15%;}
+.c3{width:90px;height:90px;top:60%;left:70%;}
+
+@keyframes move{
+0%{transform:translateY(0)}
+50%{transform:translateY(-25px)}
+100%{transform:translateY(0)}
+}
+
+/* mobile */
+@media(max-width:600px){
+.code{font-size:90px}
+h1{font-size:24px}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<div class="container">
+
+<div class="code">404</div>
+
+<h1>Oops! Page Not Found</h1>
+
+<p>
+The banking service you are trying to access is unavailable or the link is incorrect.
+Please return to the homepage or contact Stackly customer support.
+</p>
+
+<div class="buttons">
+<a href="index.html" class="home">← Go to Home</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
